@@ -11,17 +11,15 @@ export const Home = () => {
     return (
         <HomeDesign>
             <NavBar>
-                <p> 🎬🍿 Movie Library </p>
+                <p style={{marginLeft:"2rem"}}> 🎬🍿 Movie Library </p>
                 <SearchBar type="text" placeholder="🔎 Search for movie" />
             </NavBar>
             
 
             <FilmGrid>  
-                {
-                    
+                {   
                     movieData.results.map((results,index) => 
                         <FilmCard key={index} src={base_url_image + "original" + results.poster_path} alt = "image"/>
-
                     )  
                 }
             </FilmGrid> 

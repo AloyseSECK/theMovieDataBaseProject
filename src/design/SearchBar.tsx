@@ -1,13 +1,15 @@
 import styled from "@emotion/styled";
 
 export const SearchBar = styled("input")`
-    border : none ; 
+    border : none ;
+    background: #374151; 
     border-radius: 5em ; 
-    width : 25vw ;
-    padding : 10px ;  
-    font-size : 25px ;
-    height: 2% ;
+    width : 23vw ;
+    padding : 16px ;  
+    font-size : 16px ;
+    height: 1% ;
     margin-top: auto;
     margin-bottom: auto; 
+    margin-right: 2em;
 
 `;
