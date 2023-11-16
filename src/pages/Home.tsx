@@ -6,7 +6,6 @@ import { FilmCard } from "../components/FilmCard";
 
 export const Home = () => {
     return (
-<<<<<<< HEAD
         <HomeDesign>
             <NavBar>
                 <p> 🎬🍿 Movie Library </p>
@@ -38,10 +37,3 @@ export const Home = () => {
     );
 };
 
-=======
-        <div>
-            <h1> This is the home page 😺 </h1>
-        </div>
-    )
-}
->>>>>>> 6e905191647a924296a5354261ae1c3d0ad21a2f
