@@ -1,0 +1,72 @@
+{
+  "adult": false,
+  "backdrop_path": "/p9DKeXp6FPJtAQ1k13Z4zPWrCbN.jpg",
+  "belongs_to_collection": null,
+  "budget": 10000000,
+  "genres": [
+    {
+      "id": 18,
+      "name": "Drama"
+    }
+  ],
+  "homepage": "https://www.radical.movie",
+  "id": 1058694,
+  "imdb_id": "tt14570440",
+  "original_language": "en",
+  "original_title": "Radical",
+  "overview": "In a Mexican border town plagued by neglect, corruption, and violence, a frustrated teacher tries a radical new method to break through his students\u2019 apathy and unlock their curiosity, their potential\u2026 and maybe even their genius.",
+  "popularity": 210.938,
+  "poster_path": "/eSatbygYZp8ooprBHZdb6GFZxGB.jpg",
+  "production_companies": [
+    {
+      "id": 105116,
+      "logo_path": "/vSLRo64gZM8pWWZAoPsQFji7vkb.png",
+      "name": "3Pas Studios",
+      "origin_country": "US"
+    },
+    {
+      "id": 173035,
+      "logo_path": "/d509OJIfBFFc12cUxAI6mIY2qzX.png",
+      "name": "Epic",
+      "origin_country": "US"
+    },
+    {
+      "id": 79714,
+      "logo_path": "/dQfYJjl4wb9RYcD017WPNDbUSnd.png",
+      "name": "The Lift",
+      "origin_country": "MX"
+    },
+    {
+      "id": 210842,
+      "logo_path": "/osAelnShU5bBUCd2Od0L6ExSuv4.png",
+      "name": "ViX",
+      "origin_country": "US"
+    }
+  ],
+  "production_countries": [
+    {
+      "iso_3166_1": "MX",
+      "name": "Mexico"
+    },
+    {
+      "iso_3166_1": "US",
+      "name": "United States of America"
+    }
+  ],
+  "release_date": "2023-10-19",
+  "revenue": 13000000,
+  "runtime": 127,
+  "spoken_languages": [
+    {
+      "english_name": "Spanish",
+      "iso_639_1": "es",
+      "name": "Espa\u00f1ol"
+    }
+  ],
+  "status": "Released",
+  "tagline": "Think for yourself",
+  "title": "Radical",
+  "video": false,
+  "vote_average": 7.5,
+  "vote_count": 10
+}

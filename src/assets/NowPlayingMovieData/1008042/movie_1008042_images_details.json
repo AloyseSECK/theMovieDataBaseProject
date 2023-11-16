@@ -1,0 +1,89 @@
+{
+  "backdrops": [
+    {
+      "aspect_ratio": 1.778,
+      "height": 2160,
+      "iso_639_1": "fr",
+      "file_path": "/k0CnIFAAQPJbCzopTOa4f2gQ4Gj.jpg",
+      "vote_average": 0.0,
+      "vote_count": 0,
+      "width": 3840
+    }
+  ],
+  "id": 1008042,
+  "logos": [],
+  "posters": [
+    {
+      "aspect_ratio": 0.667,
+      "height": 3000,
+      "iso_639_1": "fr",
+      "file_path": "/yoZmZOIk35ZuH0WJoakB81ypHUH.jpg",
+      "vote_average": 5.312,
+      "vote_count": 1,
+      "width": 2000
+    },
+    {
+      "aspect_ratio": 0.75,
+      "height": 1080,
+      "iso_639_1": "fr",
+      "file_path": "/3jUeFQvp6iygJnCuiOmZktURgAi.jpg",
+      "vote_average": 5.312,
+      "vote_count": 1,
+      "width": 810
+    },
+    {
+      "aspect_ratio": 0.667,
+      "height": 3000,
+      "iso_639_1": "fr",
+      "file_path": "/h2hArYuTYf16v0ZERRd24KdySS0.jpg",
+      "vote_average": 0.0,
+      "vote_count": 0,
+      "width": 2000
+    },
+    {
+      "aspect_ratio": 0.667,
+      "height": 1280,
+      "iso_639_1": "fr",
+      "file_path": "/s3WnF5NKpCicYayfi5aHcgIukx3.jpg",
+      "vote_average": 0.0,
+      "vote_count": 0,
+      "width": 854
+    },
+    {
+      "aspect_ratio": 0.667,
+      "height": 3000,
+      "iso_639_1": "fr",
+      "file_path": "/nTudfuXOrEFMl2BNlhxlwLXHtTp.jpg",
+      "vote_average": 0.0,
+      "vote_count": 0,
+      "width": 2000
+    },
+    {
+      "aspect_ratio": 0.667,
+      "height": 3000,
+      "iso_639_1": "fr",
+      "file_path": "/j2ukEOeTjDfFcH8StzbCuOsgkWZ.jpg",
+      "vote_average": 0.0,
+      "vote_count": 0,
+      "width": 2000
+    },
+    {
+      "aspect_ratio": 0.667,
+      "height": 1000,
+      "iso_639_1": "fr",
+      "file_path": "/ddA1cWOlmYbjTHxIl17RXOj4rDZ.jpg",
+      "vote_average": 0.0,
+      "vote_count": 0,
+      "width": 667
+    },
+    {
+      "aspect_ratio": 0.667,
+      "height": 1000,
+      "iso_639_1": "fr",
+      "file_path": "/9YvV9x8xIiV2MxpmTMwx5xv64Uo.jpg",
+      "vote_average": 0.0,
+      "vote_count": 0,
+      "width": 667
+    }
+  ]
+}
