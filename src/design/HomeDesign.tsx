@@ -1,6 +1,5 @@
 import styled from "@emotion/styled";
 
-
 export const HomeDesign = styled("div")({
     display: "flex",
     flex: "1",
@@ -11,6 +10,5 @@ export const HomeDesign = styled("div")({
     // padding: "1em",
     fontSize: "50px",
     marginLeft: "0px",
-
-
-});
+  });
+  

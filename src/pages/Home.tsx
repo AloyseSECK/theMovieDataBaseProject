@@ -20,8 +20,12 @@ export const Home = () => {
                 {
                     
                     movieData.results.map((results,index) => 
-                        <FilmCard key={index} src={base_url_image + "original" + results.poster_path} alt = "image"/>
-
+                    <div key={index}>
+                        <FilmCard 
+                        src={base_url_image + "original" + results.poster_path} 
+                        alt="Clickable Image"         
+                        />
+                    </div>
                     )  
                 }
             </FilmGrid> 
@@ -29,4 +33,3 @@ export const Home = () => {
 
     );
 };
-
