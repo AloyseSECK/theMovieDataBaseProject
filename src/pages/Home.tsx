@@ -3,6 +3,9 @@ import { NavBar } from "../design/NavBar";
 import { SearchBar } from "../design/SearchBar";
 import { FilmGrid } from "../components/FilmGrid";
 import { FilmCard } from "../components/FilmCard";
+import movieData from "../assets/NowPlayingMovieData/NowPlayingMovie.json"
+
+const base_url_image = "https://image.tmdb.org/t/p/"
 
 export const Home = () => {
     return (
@@ -12,25 +15,15 @@ export const Home = () => {
                 <SearchBar type="text" placeholder="🔎 Search for movie" />
             </NavBar>
             
+
             <FilmGrid>  
-                <FilmCard> 
-                    <img style={{width: "450px", height: "auto", borderRadius: "1em"}} src="./images/expendables.jpg" alt="" />
-                </FilmCard>
-                <FilmCard> 
-                    <img style={{width: "450px", height: "auto", borderRadius: "1em"}} src="./images/expendables.jpg" alt="" />
-                </FilmCard>                <FilmCard> 
-                    <img style={{width: "450px", height: "auto", borderRadius: "1em"}} src="./images/expendables.jpg" alt="" />
-                </FilmCard>                <FilmCard> 
-                    <img style={{width: "450px", height: "auto", borderRadius: "1em"}} src="./images/expendables.jpg" alt="" />
-                </FilmCard>                <FilmCard> 
-                    <img style={{width: "450px", height: "auto", borderRadius: "1em"}} src="./images/expendables.jpg" alt="" />
-                </FilmCard>                <FilmCard> 
-                    <img style={{width: "450px", height: "auto", borderRadius: "1em"}} src="./images/expendables.jpg" alt="" />
-                </FilmCard>                <FilmCard> 
-                    <img style={{width: "450px", height: "auto", borderRadius: "1em"}} src="./images/expendables.jpg" alt="" />
-                </FilmCard>                <FilmCard> 
-                    <img style={{width: "450px", height: "auto", borderRadius: "1em"}} src="./images/expendables.jpg" alt="" />
-                </FilmCard>               
+                {
+                    
+                    movieData.results.map((results,index) => 
+                        <FilmCard key={index} src={base_url_image + "original" + results.poster_path} alt = "image"/>
+
+                    )  
+                }
             </FilmGrid> 
         </HomeDesign>
 
