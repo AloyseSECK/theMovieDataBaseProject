@@ -26,3 +26,27 @@ export const getMovieDetails = async (movieId : string) => {
     return data;
 }
 
+export const getMovieCredits = async (movieId : string) => {
+  const response = await fetch(apiUrl + movieId + "/credits", {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${bearerToken}`,
+        'Content-Type': 'application/json',
+      },
+    })
+  const data = await response.json()
+  return data;
+}
+
+export const getMovieImages = async (movieId : string) => {
+  const response = await fetch(apiUrl + movieId + "/images", {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${bearerToken}`,
+        'Content-Type': 'application/json',
+      },
+    })
+  const data = await response.json()
+  return data;
+}
+

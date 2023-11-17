@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { getNowPlayingMovies } from "../services/query";
 import {
     useQuery,
-  } from '@tanstack/react-query'
+    } from '@tanstack/react-query'
 
 const base_url_image = "https://image.tmdb.org/t/p/"
 
@@ -16,6 +16,7 @@ export const Home = () => {
         queryKey: ['movies'],
         queryFn: getNowPlayingMovies,
     });
+
 
     if (isPending) {
         return <span>Loading...</span>
@@ -38,7 +39,7 @@ export const Home = () => {
                             <FilmCard src={base_url_image + "original" + results.poster_path} alt="image" />
                         </Link>)
                     )
-                }
+                } 
             </FilmGrid>
         </HomeDesign>
 
