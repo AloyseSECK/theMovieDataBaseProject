@@ -1,17 +1,11 @@
 import { useParams, Link } from "react-router-dom";
+import { ActorsList, ActorCard, ActorImage, ActorInfo,} from "../design/actorsDesign/ActorsDesign"
+import { Images, ImagesList, ImageCard, Credits, } from "../design/movieImagesDesign/MovieImagesDesign"
 import {
   Presentation,
-  ActorsList,
-  ActorCard,
-  ActorImage,
-  ActorInfo,
-  Images,
-  ImagesList,
-  ImageCard,
   PresentationCard,
   Title,
   SubTitle,
-  Credits,
   DescriptionHeader,
   DescriptionFooter,
   MoviePageDesign,
@@ -80,6 +74,7 @@ export const MoviePage = () => {
         <div>
           <Link to={"/"}> Back </Link>
         </div>
+  
         <Presentation>
           <PresentationCard
             src={base_url_image + movieDetails.data.poster_path}
