@@ -17,12 +17,10 @@ import {
   MoviePageDesign,
 } from "../design/MoviePageDesign";
 
-import {
-  getMovieDetails,
-  getMovieCredits,
-  getMovieImages,
-} from "../services/query";
-import { useQuery } from "@tanstack/react-query";
+
+import { useMovieDetails } from "../hooks/useMovieDetails";
+import { useMovieCredits } from "../hooks/useMovieCredits";
+import { useMovieImages } from "../hooks/useMovieImages";
 
 interface CastMember {
   name: string;
@@ -39,19 +37,9 @@ export const MoviePage = () => {
     return <span>Invalid movie ID</span>;
   }
 
-  const movieDetails = useQuery({
-    queryKey: ["movies"],
-    queryFn: () => getMovieDetails(movieId),
-  });
-
-  const movieCredits = useQuery({
-    queryKey: ["credits"],
-    queryFn: () => getMovieCredits(movieId),
-  });
-  const movieImages = useQuery({
-    queryKey: ["images"],
-    queryFn: () => getMovieImages(movieId),
-  });
+  const movieDetails = useMovieDetails(movieId);
+  const movieCredits = useMovieCredits(movieId);
+  const movieImages = useMovieImages(movieId);
 
   if (
     movieDetails.isPending ||
