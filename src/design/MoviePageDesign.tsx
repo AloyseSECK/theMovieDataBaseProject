@@ -1,5 +1,8 @@
 import styled from "@emotion/styled";
 
+export const Main = styled("div")({})
+
+
 export const MoviePageDesign = styled.div`
     padding : 48px ; 
 `;
@@ -57,6 +60,7 @@ export const ImagesList = styled.div`
 `;
 export const ImageCard = styled.img`
     border-radius: 0.375rem;
-    width: 500px ; // Normalement on a max-width: 100% et height: auto 
-    // height: auto ; 
+    // width: 1000px ; // Normalement on a max-width: 100% et height: auto 
+    height: auto ; 
+    max-width: 100%;
 `;
