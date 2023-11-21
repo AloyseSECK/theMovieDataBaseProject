@@ -39,7 +39,7 @@ export const getMovieCredits = async (movieId : string) => {
 }
 
 export const getMovieImages = async (movieId : string) => {
-  const response = await fetch(apiUrl + movieId + "/images?language=fr", {
+  const response = await fetch(apiUrl + movieId + "/images", {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${bearerToken}`,
@@ -47,6 +47,7 @@ export const getMovieImages = async (movieId : string) => {
       },
     })
   const data = await response.json()
-  return data;
+  data.backdrops = data.backdrops.filter((backdrop:any) => backdrop.iso_639_1 === null)
+  return data
 }
 

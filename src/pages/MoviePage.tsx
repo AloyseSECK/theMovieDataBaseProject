@@ -83,8 +83,9 @@ export const MoviePage = () => {
         }}
       />
       <MoviePageDesign>
-        <div  style={{marginBottom: "15px"}} >
-          <Link to={"/"} style={{color:"white"}}> {LeftArrow} Back </Link>
+        <div  style={{marginBottom: "15px"}} className="leftArrow" >
+        
+          <Link to={"/"} style={{color:"white", fill: "white"}} > {LeftArrow} Back </Link>
         </div>
 
         <Presentation>
@@ -126,12 +127,11 @@ export const MoviePage = () => {
         <Images>
           <SubTitle> Images </SubTitle>
           <ImagesList>
-            <ImageCard src={base_url_image + movieDetails.data.backdrop_path} />
             {movieImages.data.backdrops.map((results: any, index: number) => (
               <ImageCard
                 key={index++}
                 src={base_url_image + results.file_path}
-              ></ImageCard>
+              />
             ))}
           </ImagesList>
         </Images>
