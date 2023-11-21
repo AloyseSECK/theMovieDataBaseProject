@@ -34,7 +34,7 @@ export const Home = () => {
             </NavBar>
             <FilmGrid>
                 {
-                    data.results.map((results: any, index: any) => (
+                    data.results.map((results: any, index: number) => (
                         <Link to={"Movie/" + results.id.toString()} key={index}> 
                             <FilmCard src={base_url_image + "original" + results.poster_path} alt="image" />
                         </Link>)

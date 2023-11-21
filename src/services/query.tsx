@@ -39,7 +39,7 @@ export const getMovieCredits = async (movieId : string) => {
 }
 
 export const getMovieImages = async (movieId : string) => {
-  const response = await fetch(apiUrl + movieId + "/images", {
+  const response = await fetch(apiUrl + movieId + "/images?language=fr", {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${bearerToken}`,

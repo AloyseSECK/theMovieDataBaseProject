@@ -16,6 +16,7 @@ import {
   DescriptionFooter,
   MoviePageDesign,
 } from "../design/MoviePageDesign";
+
 import {
   getMovieDetails,
   getMovieCredits,
@@ -27,9 +28,6 @@ interface CastMember {
   name: string;
   profile_path: string;
   character: string;
-}
-interface BackDrop {
-  file_path: string;
 }
 
 const base_url_image = "https://image.tmdb.org/t/p/original";
@@ -51,7 +49,7 @@ export const MoviePage = () => {
     queryFn: () => getMovieCredits(movieId),
   });
   const movieImages = useQuery({
-    queryKey: ["credits"],
+    queryKey: ["images"],
     queryFn: () => getMovieImages(movieId),
   });
 
@@ -88,18 +86,12 @@ export const MoviePage = () => {
           alt="img"
         />
         <div>
-          <Title> Five Nights at Freddy's </Title>
-          <DescriptionHeader>
-            Recently fired and desperate for work, a troubled young man named
-            Mike agrees to take a position as a night security guard at an
-            abandoned theme restaurant: Freddy Fazbear's Pizzeria. But he soon
-            discovers that nothing at Freddy's is what it seems Horror, Mystery
-            25 oct. 2023
-          </DescriptionHeader>
+          <Title>{movieDetails.data.original_title} </Title>
+          <DescriptionHeader> {movieDetails.data.overview} </DescriptionHeader>
           <DescriptionFooter>
-            Horror, Mystery
+            {movieDetails.data.genres.map((results: any) => results.name + " ")}
             <br />
-            25 oct. 2023
+            {movieDetails.data.release_date}
           </DescriptionFooter>
         </div>
       </Presentation>
@@ -121,13 +113,17 @@ export const MoviePage = () => {
       <Images>
         <SubTitle> Images </SubTitle>
         <ImagesList>
-          <ImageCard src="https://images.unsplash.com/photo-1550684376-efcbd6e3f031?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
-          <ImageCard src="https://images.unsplash.com/photo-1550684376-efcbd6e3f031?q=80&w=1770&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" />
-
-          {/* {movieImages.data.backdrops.map((results: BackDrop, index: number) => (
+          <ImageCard src = {base_url_image + movieDetails.data.backdrop_path}  />
+          {movieImages.data.backdrops.map((results: any, index: number) => (
+            <ImageCard
+              key={index++}
+              src={base_url_image + results.file_path }
+            ></ImageCard>
+          ))}
+          {/* {movieImages.data.posters.map((results: any, index: number) => (
             <ImageCard
               key={index}
-              src={results.file_path}
+              src={base_url_image + results.file_path }
             ></ImageCard>
           ))} */}
         </ImagesList>

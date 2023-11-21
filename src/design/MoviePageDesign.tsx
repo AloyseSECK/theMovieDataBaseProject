@@ -57,5 +57,6 @@ export const ImagesList = styled.div`
 `;
 export const ImageCard = styled.img`
     border-radius: 0.375rem;
-    width: 1000px ; // Normalement on a max-width: 100% et height: auto 
+    width: 500px ; // Normalement on a max-width: 100% et height: auto 
+    // height: auto ; 
 `;
