@@ -1,6 +1,16 @@
 import { useParams, Link } from "react-router-dom";
-import { ActorsList, ActorCard, ActorImage, ActorInfo,} from "../design/actorsDesign/ActorsDesign"
-import { Images, ImagesList, ImageCard, Credits, } from "../design/movieImagesDesign/MovieImagesDesign"
+import {
+  ActorsList,
+  ActorCard,
+  ActorImage,
+  ActorInfo,
+} from "../design/actorsDesign/ActorsDesign";
+import {
+  Images,
+  ImagesList,
+  ImageCard,
+  Credits,
+} from "../design/movieImagesDesign/MovieImagesDesign";
 import {
   Presentation,
   PresentationCard,
@@ -10,8 +20,8 @@ import {
   DescriptionFooter,
   MoviePageDesign,
   Main,
+  LeftArrow,
 } from "../design/MoviePageDesign";
-
 
 import { useMovieDetails } from "../hooks/useMovieDetails";
 import { useMovieCredits } from "../hooks/useMovieCredits";
@@ -24,6 +34,8 @@ interface CastMember {
 }
 
 const base_url_image = "https://image.tmdb.org/t/p/original";
+
+
 
 export const MoviePage = () => {
   const { movieId } = useParams();
@@ -64,17 +76,17 @@ export const MoviePage = () => {
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
           filter: "blur(10px)",
-          position: "fixed", 
+          position: "fixed",
           width: "100%",
           height: "100%",
-          zIndex: -1, 
+          zIndex: -1,
         }}
       />
       <MoviePageDesign>
-        <div>
-          <Link to={"/"}> Back </Link>
+        <div  style={{marginBottom: "15px"}} >
+          <Link to={"/"} style={{color:"white"}}> {LeftArrow} Back </Link>
         </div>
-  
+
         <Presentation>
           <PresentationCard
             src={base_url_image + movieDetails.data.poster_path}
@@ -83,8 +95,7 @@ export const MoviePage = () => {
           <div>
             <Title>{movieDetails.data.original_title} </Title>
             <DescriptionHeader>
-              {" "}
-              {movieDetails.data.overview}{" "}
+              {movieDetails.data.overview}
             </DescriptionHeader>
             <DescriptionFooter>
               {movieDetails.data.genres.map(
