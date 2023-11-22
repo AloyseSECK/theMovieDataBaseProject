@@ -7,11 +7,17 @@ export const MoviePageDesign = styled.div`
     padding : 48px ; 
 `;
 
-export const Presentation = styled.div`
-    display: flex;
-    align-items: end;
-    gap: 1rem ; 
-`;
+export const Presentation = styled("div")({
+    display: "flex",
+    alignItems : "end" ,
+    gap: "1rem" ,
+    "@media (max-width: 650px)": {
+        flexDirection: "column",
+        alignItems: "center",
+    },
+});
+
+
 
 export const Title = styled.p`
     font-size: 36px;
