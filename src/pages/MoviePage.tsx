@@ -26,6 +26,7 @@ import {
 import { useMovieDetails } from "../hooks/useMovieDetails";
 import { useMovieCredits } from "../hooks/useMovieCredits";
 import { useMovieImages } from "../hooks/useMovieImages";
+import { css } from "@emotion/css";
 
 interface CastMember {
   name: string;
@@ -83,8 +84,14 @@ export const MoviePage = () => {
         }}
       />
       <MoviePageDesign>
-        <div  style={{marginBottom: "15px"}} >
-          <Link to={"/"} style={{color:"white"}}> {LeftArrow} Back </Link>
+        <div style={{ marginBottom: "15px" }} >
+          <Link to={"/"}
+            className={css`
+      color: white;
+      &:hover {
+        transform: translateX(-5px);
+      }
+    `}> {LeftArrow} Back </Link>
         </div>
 
         <Presentation>
