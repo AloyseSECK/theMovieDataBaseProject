@@ -1,8 +1,8 @@
-const apiUrl = 'https://api.themoviedb.org/3/movie/';
+const apiUrl = 'https://api.themoviedb.org/3/';
 const bearerToken = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwNTY3OTRlMDU1ZjRiMDA0OWVkYjAwNzYwNmU3YTJiMCIsInN1YiI6IjY1NGE1MDM3MWFjMjkyN2IyZjI3MjgxZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.Zh5RQtn5g1oHuAfOyZmiNqBgPdAp5MWxY3jYPoJdjqM';
 
 export const getNowPlayingMovies = async () => {
-    const response = await fetch(apiUrl + "now_playing", {
+    const response = await fetch(apiUrl + "movie/now_playing", {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${bearerToken}`,
@@ -15,7 +15,7 @@ export const getNowPlayingMovies = async () => {
 
 
 export const getMovieDetails = async (movieId : string) => {
-    const response = await fetch(apiUrl + movieId, {
+    const response = await fetch(apiUrl + "movie/" + movieId, {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${bearerToken}`,
@@ -27,7 +27,7 @@ export const getMovieDetails = async (movieId : string) => {
 }
 
 export const getMovieCredits = async (movieId : string) => {
-  const response = await fetch(apiUrl + movieId + "/credits", {
+  const response = await fetch(apiUrl + "movie/" + movieId + "/credits", {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${bearerToken}`,
@@ -39,7 +39,7 @@ export const getMovieCredits = async (movieId : string) => {
 }
 
 export const getMovieImages = async (movieId : string) => {
-  const response = await fetch(apiUrl + movieId + "/images", {
+  const response = await fetch(apiUrl + "movie/" + movieId + "/images?language=fr", {
       method: 'GET',
       headers: {
         'Authorization': `Bearer ${bearerToken}`,
@@ -47,7 +47,18 @@ export const getMovieImages = async (movieId : string) => {
       },
     })
   const data = await response.json()
-  data.backdrops = data.backdrops.filter((backdrop:any) => backdrop.iso_639_1 === null)
-  return data
+  return data;
 }
 
+export const getMoviesSearch = async (query : string) => {
+  const response = await fetch(apiUrl + "search/movie?query=" + query +"&language=fr", {
+      method: 'GET',
+      headers: {
+        'Authorization': `Bearer ${bearerToken}`,
+        'Content-Type': 'application/json',
+      },
+    })
+  const data = await response.json()
+
+  return data;
+}

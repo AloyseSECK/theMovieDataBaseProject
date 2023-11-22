@@ -26,6 +26,7 @@ import {
 import { useMovieDetails } from "../hooks/useMovieDetails";
 import { useMovieCredits } from "../hooks/useMovieCredits";
 import { useMovieImages } from "../hooks/useMovieImages";
+import { css } from "@emotion/css";
 
 interface CastMember {
   name: string;

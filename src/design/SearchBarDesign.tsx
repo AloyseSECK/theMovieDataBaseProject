@@ -1,6 +1,6 @@
 import styled from "@emotion/styled";
 
-export const SearchBar = styled("input")`
+export const SearchBarDesign = styled("input")`
     border : none ;
     background: #374151; 
     border-radius: 5em ; 
