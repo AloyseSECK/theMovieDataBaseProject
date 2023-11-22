@@ -1,16 +1,6 @@
 import { useParams, Link } from "react-router-dom";
-import {
-  ActorsList,
-  ActorCard,
-  ActorImage,
-  ActorInfo,
-} from "../design/actorsDesign/ActorsDesign";
-import {
-  Images,
-  ImagesList,
-  ImageCard,
-  Credits,
-} from "../design/movieImagesDesign/MovieImagesDesign";
+import { ActorsList, ActorCard, ActorImage, ActorInfo,} from "../design/actorsDesign/ActorsDesign";
+import { Images, ImagesList, ImageCard, Credits,} from "../design/movieImagesDesign/MovieImagesDesign";
 import {
   Presentation,
   PresentationCard,
@@ -73,10 +63,10 @@ export const MoviePage = () => {
     <Main>
       <div
         style={{
-          backgroundImage: `url(${backgroundImgUrl})`,
+          backgroundImage: `linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(${backgroundImgUrl})`,
           backgroundSize: "cover",
           backgroundRepeat: "no-repeat",
-          filter: "blur(10px)",
+          filter: "blur(15px)",
           position: "fixed",
           width: "100%",
           height: "100%",
@@ -84,14 +74,9 @@ export const MoviePage = () => {
         }}
       />
       <MoviePageDesign>
-        <div style={{ marginBottom: "15px" }} >
-          <Link to={"/"}
-            className={css`
-      color: white;
-      &:hover {
-        transform: translateX(-5px);
-      }
-    `}> {LeftArrow} Back </Link>
+        
+        <div  style={{marginBottom: "15px"}} className="leftArrow" >
+          <Link to={"/"} style={{color:"white", fill: "white"}} > {LeftArrow} Back </Link>
         </div>
 
         <Presentation>
@@ -133,12 +118,11 @@ export const MoviePage = () => {
         <Images>
           <SubTitle> Images </SubTitle>
           <ImagesList>
-            <ImageCard src={base_url_image + movieDetails.data.backdrop_path} />
             {movieImages.data.backdrops.map((results: any, index: number) => (
               <ImageCard
                 key={index++}
                 src={base_url_image + results.file_path}
-              ></ImageCard>
+              />
             ))}
           </ImagesList>
         </Images>

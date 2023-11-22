@@ -9,9 +9,8 @@ export const ImagesList = styled.div`
 `;
 export const ImageCard = styled.img`
     border-radius: 0.375rem;
-    // width: 1000px ; // Normalement on a max-width: 100% et height: auto 
-    height: auto ; 
-    max-width: 100%;
+    max-width: 1200px ;
+    // height: auto ; 
 `;
 
 export const Credits = styled.div``;
