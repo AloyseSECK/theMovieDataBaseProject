@@ -1,16 +1,16 @@
 import styled from "@emotion/styled";
 
-export const Images = styled.div``;
+export const Images = styled("div")({});
 
-export const ImagesList = styled.div`
-    display: flex;
-    overflow-x: auto;
-    gap: 1vw;
-`;
-export const ImageCard = styled.img`
-    border-radius: 0.375rem;
-    max-width: 1200px ;
-    // height: auto ; 
-`;
+export const ImagesList = styled("div")({
+    display: "flex",
+    overflowX: "auto",
+    gap: "1vw",
+});
 
-export const Credits = styled.div``;
+export const ImageCard = styled("img")({
+    borderRadius: "0.375rem",
+    maxWidth: "1200px",
+});
+
+export const Credits = styled("div")({});
