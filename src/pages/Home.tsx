@@ -4,6 +4,7 @@ import { FilmGrid } from "../components/FilmGrid";
 import { FilmCard } from "../components/FilmCard";
 import { Link } from "react-router-dom";
 import { getNowPlayingMovies } from "../services/query";
+import { base_url_image } from '../services/baseUrls';
 
 import {
     useQuery,
@@ -12,7 +13,6 @@ import {
 import { SearchBar } from "../components/SearchBar";
 import { useState } from "react";
 
-const base_url_image = "https://image.tmdb.org/t/p/original"
 export const loadingImage = "https://wallpaperaccess.com/full/1175484.jpg"
 export const Home = () => {
     const [results, setResults] = useState([]);

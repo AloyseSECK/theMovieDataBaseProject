@@ -26,6 +26,7 @@ import {
 import { useMovieDetails } from "../hooks/useMovieDetails";
 import { useMovieCredits } from "../hooks/useMovieCredits";
 import { useMovieImages } from "../hooks/useMovieImages";
+import { base_url_image } from '../services/baseUrls';
 
 interface CastMember {
   name: string;
@@ -37,7 +38,6 @@ interface CrewMember {
   profile_path: string;
   job: string;
 }
-const base_url_image = "https://image.tmdb.org/t/p/original";
 const defaultImageUrl =
   "https://cdn.pixabay.com/photo/2016/09/28/02/14/user-1699635_1280.png";
 
