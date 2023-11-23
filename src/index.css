@@ -76,3 +76,8 @@ button:focus-visible {
 .leftArrow:hover {
   transform: translateX(-7px);
 }
+
+.Link {
+  color: white;
+  font-size: 0.5em;
+}

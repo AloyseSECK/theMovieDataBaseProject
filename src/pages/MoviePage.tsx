@@ -26,7 +26,6 @@ import {
 import { useMovieDetails } from "../hooks/useMovieDetails";
 import { useMovieCredits } from "../hooks/useMovieCredits";
 import { useMovieImages } from "../hooks/useMovieImages";
-import { css } from "@emotion/css";
 
 interface CastMember {
   name: string;
@@ -39,7 +38,8 @@ interface CrewMember {
   job: string;
 }
 const base_url_image = "https://image.tmdb.org/t/p/original";
-const defaultImageUrl = "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_1280.png";
+const defaultImageUrl =
+  "https://cdn.pixabay.com/photo/2016/09/28/02/14/user-1699635_1280.png";
 
 export const MoviePage = () => {
   const { movieId } = useParams();
@@ -100,7 +100,7 @@ export const MoviePage = () => {
             alt="img"
           />
           <div>
-            <Title>{movieDetails.data.original_title} </Title>
+            <Title>{movieDetails.data.title} </Title>
             <DescriptionHeader>{movieDetails.data.overview}</DescriptionHeader>
             <DescriptionFooter>
               {formatGenres(movieDetails.data.genres)}
@@ -112,34 +112,53 @@ export const MoviePage = () => {
         <Credits>
           <SubTitle> Credits </SubTitle>
           <ActorsList>
-            {movieCredits.data.cast.slice(0, 10).map((results: CastMember, index: number) => (
+            {movieCredits.data.cast
+              .slice(0, 10)
+              .map((results: CastMember, index: number) => (
                 <ActorCard key={index}>
-                  <ActorImage src={base_url_image + results.profile_path} />
+                  <ActorImage
+                    src={
+                      results.profile_path
+                        ? base_url_image + results.profile_path
+                        : defaultImageUrl
+                    }
+                  />
                   <ActorInfo> {results.name} </ActorInfo>
                   <ActorInfo> {results.character} </ActorInfo>
                 </ActorCard>
               ))}
-              {movieCredits.data.crew
-                .filter((member: CrewMember) => member.job === "Director" || member.job === "Original Music Composer")
-                .map((results: CrewMember, index: number) => (
-                  <ActorCard key={index}>
-                    <ActorImage src={results.profile_path ? base_url_image + results.profile_path : defaultImageUrl} />
-                    <ActorInfo> {results.name} </ActorInfo>
-                    <ActorInfo> {results.job} </ActorInfo>
-                  </ActorCard>
-                ))
-              }
+            {movieCredits.data.crew
+              .filter(
+                (member: CrewMember) =>
+                  member.job === "Director" ||
+                  member.job === "Original Music Composer"
+              )
+              .map((results: CrewMember, index: number) => (
+                <ActorCard key={index}>
+                  <ActorImage
+                    src={
+                      results.profile_path
+                        ? base_url_image + results.profile_path
+                        : defaultImageUrl
+                    }
+                  />
+                  <ActorInfo> {results.name} </ActorInfo>
+                  <ActorInfo> {results.job} </ActorInfo>
+                </ActorCard>
+              ))}
           </ActorsList>
         </Credits>
         <Images>
           <SubTitle> Images </SubTitle>
           <ImagesList>
-            {movieImages.data.backdrops.map((results: any, index: number) => (
-              <ImageCard
-                key={index++}
-                src={base_url_image + results.file_path}
-              />
-            ))}
+            {movieImages.data.backdrops
+              .filter((backdrop: any) => backdrop.iso_639_1 === null)
+              .map((results: any, index: number) => (
+                <ImageCard
+                  key={index}
+                  src={base_url_image + results.file_path}
+                />
+              ))}
           </ImagesList>
         </Images>
       </MoviePageDesign>
