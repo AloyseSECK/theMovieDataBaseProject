@@ -50,16 +50,3 @@ export const getMovieImages = async (movieId : string) => {
   const data = await response.json()
   return data;
 }
-
-export const getMoviesSearch = async (query : string) => {
-  const response = await fetch(apiUrl + "search/movie?query=" + query +"&language=fr", {
-      method: 'GET',
-      headers: {
-        'Authorization': `Bearer ${bearerToken}`,
-        'Content-Type': 'application/json',
-      },
-    })
-  const data = await response.json()
-
-  return data;
-}
