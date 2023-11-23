@@ -6,6 +6,7 @@ export const FilmCard = styled("img")`
     border-radius: 0.375rem ; 
     cursor: pointer;
     transition: transform 0.3s;
+    height: 400px;
   
     &:hover {
       transform: scale(1.05);

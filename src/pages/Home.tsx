@@ -12,8 +12,8 @@ import {
 import { SearchBar } from "../components/SearchBar";
 import { useState } from "react";
 
-const base_url_image = "https://image.tmdb.org/t/p/"
-
+const base_url_image = "https://image.tmdb.org/t/p/original"
+export const loadingImage = "https://wallpaperaccess.com/full/1175484.jpg"
 export const Home = () => {
     const [results, setResults] = useState([]);
     const { isPending, isError, data, error } = useQuery({
@@ -43,14 +43,19 @@ export const Home = () => {
                     (results && results.length > 0)? results.map((results: any, index: number) =>
                         (
                             <Link to={"Movie/" + results.id.toString()} key={index}>
-                                <FilmCard src={base_url_image + "original" + results.poster_path} alt="image" />
+                                <FilmCard src={
+                                    results.poster_path 
+                                    ? base_url_image + results.poster_path  
+                                    : loadingImage 
+                                }/>
+
                             </Link>
                         )
                     ):
                     data.results.map((results: any, index: number) => 
                         (
                         <Link to={"Movie/" + results.id.toString()} key={index}>
-                            <FilmCard src={base_url_image + "original" + results.poster_path} alt="image" />
+                            <FilmCard src={base_url_image + results.poster_path} alt="image" />
                         </Link>
                         )
                     )
