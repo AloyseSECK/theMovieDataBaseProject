@@ -8,7 +8,7 @@ export const SearchBar = ({ setResults }: { setResults: React.Dispatch<React.Set
     const [input, setInput] = useState('');
     const HandleChange = async (input: string) => {
         setInput(input);
-        const response =  await fetch(apiUrl + "search/movie?query=" + input +"&language=fr", {
+        const response =  await fetch(apiUrl + "search/movie?query=" + input , {
             method: 'GET',
             headers: {
               'Authorization': `Bearer ${bearerToken}`,
