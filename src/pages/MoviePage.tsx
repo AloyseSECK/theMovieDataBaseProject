@@ -88,7 +88,7 @@ export const MoviePage = () => {
       />
       <MoviePageDesign>
         <div style={{ marginBottom: "15px" }} className="leftArrow">
-          <Link to={"/"} style={{ color: "white", fill: "white" }}>
+          <Link to={"/theMovieDataBaseProject/"} style={{ color: "white", fill: "white" }}>
             {" "}
             {LeftArrow} Back{" "}
           </Link>
