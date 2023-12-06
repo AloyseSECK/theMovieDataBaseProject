@@ -3,12 +3,13 @@ import { Home } from "../pages/Home";
 import { MoviePage} from "../pages/MoviePage";
 
 
+
 export const MyRoutes = () => {
     return (
         <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/Home" element={<Home />} />
-            <Route path="/movie/:movieId" element={<MoviePage />} />
+            <Route path="/theMovieDataBaseProject/" element={<Home />} />
+            <Route path="/theMovieDataBaseProject/Home" element={<Home />} />
+            <Route path="/theMovieDataBaseProject/movie/:movieId" element={<MoviePage />} />
         </Routes>
     );
 };

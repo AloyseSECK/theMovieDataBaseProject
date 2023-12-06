@@ -5,10 +5,9 @@ const bearerToken = 'eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIwNTY3OTRlMDU1ZjRiMDA0OWVkYj
 
 
 export const SearchBar = ({ setResults }: { setResults: React.Dispatch<React.SetStateAction<any>> }) => {
-    const [input, setInput] = useState('');
+    const [_, setInput] = useState('');
     const HandleChange = async (input: string) => {
         setInput(input);
-        console.log(input) ; 
         const response =  await fetch(apiUrl + "search/movie?query=" + input , {
             method: 'GET',
             headers: {
