@@ -11,5 +11,20 @@ export const SearchBarDesign = styled("input")`
     margin-top: auto;
     margin-bottom: auto; 
     margin-right: 2em;
+    
 
+    @media (max-width: 585px) {
+        width: 80%;
+        margin-right: 0;
+        align-self: center;
+        margin-bottom: 1em;
+        margin-top: 1em;
+    }
+`;
+
+export const SearchBarDiv = styled("div")`
+    padding-top: 30px;
+    @media (max-width: 585px) {
+        padding-top: 0px;
+    }
 `;

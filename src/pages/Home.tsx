@@ -1,5 +1,6 @@
 import { HomeDesign } from "../design/HomeDesign";
 import { NavBar } from "../design/NavBar";
+import { SearchBarDiv } from "../design/SearchBarDesign";
 import { FilmGrid } from "../components/FilmGrid";
 import { FilmCard } from "../components/FilmCard";
 import { Link } from "react-router-dom";
@@ -33,10 +34,10 @@ export const Home = () => {
     return (
         <HomeDesign>
             <NavBar>
-                <p style={{ marginLeft: "2rem" }}> 🎬🍿 Movie Library </p>
-                <div style = {{display: "table-column", paddingTop: "30px"}}>
+                <p style={{ marginLeft: "2rem", marginRight:"2em" }}> 🎬🍿 Movie Library </p>
+                <SearchBarDiv>
                     <SearchBar setResults={setResults} />
-                </div>
+                </SearchBarDiv>
             </NavBar>
             <FilmGrid>
             {

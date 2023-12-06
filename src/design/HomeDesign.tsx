@@ -10,5 +10,8 @@ export const HomeDesign = styled("div")({
     lineHeight: "2rem",
     marginLeft: "auto",
 
-
+    "@media (max-width: 444px)": {
+        fontSize: "1.5rem",
+    },
 });
+    
