@@ -94,7 +94,7 @@ Error generating stack: `+l.message+`
     border-radius: 0.375rem ; 
     cursor: pointer;
     transition: transform 0.3s;
-    height: 500px;
+    height: 400px;
   
     &:hover {
       transform: scale(1.05);
